@@ -1,8 +1,10 @@
-import ImageObject from "./ImageObject";
+import {ImageObject} from "./ImageObject";
 
 
-class MenuElement {
-    constructor(public id: string, public link: string, public element: string|ImageObject) { }
-}
+export const menuElement = (link: string, element: string|ImageObject, id = "") => ({
+    id: id,
+    link: link,
+    element: element,
+})
 
-export default MenuElement
+export type MenuElement = ReturnType<typeof menuElement>

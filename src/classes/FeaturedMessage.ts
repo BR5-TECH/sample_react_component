@@ -1,8 +1,13 @@
-import ImageObject from "./ImageObject";
+import {ImageObject} from "./ImageObject";
 
 
-class FeaturedMessage {
-    constructor(public id: number, public title: string, public message: string, public date: number, public image?: ImageObject) { }
-}
+export const featured = (title: string, message = "", image?: ImageObject,  date = Math.round(Date.now() / 1000), id = 0) => ({
+    id: id,
+    title: title,
+    message: message,
+    image: image,
+    date: date,
+})
 
-export default FeaturedMessage
+
+export type FeaturedMessage = ReturnType<typeof featured>
